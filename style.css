@@ -1,0 +1,2091 @@
+@import url('https://fonts.googleapis.com/css2?family=Inconsolata:wght@500;700&family=Monoton&family=Poppins:ital,wght@0,500;0,600;1,600&family=Roboto+Mono:wght@500&display=swap');
+
+* {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+html {
+	scroll-behavior: smooth;
+}
+
+.logo {
+	position: fixed;
+	top: 0;
+	width: 100%;
+	height: 70px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: black;
+	color: whitesmoke;
+	z-index: 2;
+}
+
+.logo a {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.logo p {
+	padding: 0.4rem;
+	display: flex;
+	justify-content: center;
+	text-align: center;
+	align-items: center;
+	color: whitesmoke;
+	font-size: 18px;
+	border: 2px dotted;
+	background: rgb(0, 0, 0);
+	border-color: rgba(255, 5, 5, 0.437);
+	border-radius: 15px;
+	box-shadow: 3px 3px 3px 1px rgba(255, 251, 251, 0.288);
+	overflow: hidden;
+}
+
+.tekst {
+	margin-left: 0.5rem;
+	border-radius: 15px;
+	font-weight: bold;
+	color: whitesmoke;
+}
+
+.kursor {
+	display: inline-block;
+	width: 1px;
+	margin-left: 1rem;
+	animation: blink 1s infinite;
+	background-color: whitesmoke;
+}
+
+.kursor.pisze {
+	margin: 0 auto;
+	animation: none;
+}
+
+@keyframes blink {
+	0% {
+		background-color: whitesmoke;
+	}
+	49% {
+		background-color: whitesmoke;
+	}
+	50% {
+		background-color: transparent;
+	}
+	99% {
+		background-color: transparent;
+	}
+	100% {
+		background-color: whitesmoke;
+	}
+}
+
+.tlo {
+	position: absolute;
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+}
+
+.code {
+	position: relative;
+	display: flex;
+}
+
+.code i {
+	position: relative;
+	width: 50px;
+	height: 20px;
+	margin: 0 4px;
+	border-radius: 50%;
+	text-align: center;
+	background: transparent;
+	color: red;
+	font-size: 35px;
+	animation: drop 1s linear infinite;
+	animation-duration: calc(105s / var(--i));
+}
+
+@keyframes drop {
+	0% {
+		transform: translateY(200vh) scale(0);
+	}
+	100% {
+		transform: translateY(-10vh) scale(1);
+	}
+}
+
+.ikony-glowny {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 2rem;
+	position: fixed;
+	background: black;
+	height: 55px;
+	top: 70px;
+	width: 100%;
+	text-transform: uppercase;
+	z-index: 2;
+}
+
+.glowny .main {
+	padding: 5px;
+	cursor: pointer;
+}
+
+.glowny .main .tooltip {
+	position: relative;
+	text-align: center;
+	background: whitesmoke;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 2px 10px;
+	width: 12vh;
+	height: 30px;
+	border-radius: 5px;
+	box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+	pointer-events: none;
+	transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.glowny .main .tooltip:before {
+	position: absolute;
+	content: '';
+	height: 8px;
+	width: 8px;
+	background: whitesmoke;
+	bottom: -4px;
+	left: 50%;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.glowny .aboutme {
+	padding: 5px;
+	cursor: pointer;
+}
+
+.glowny .aboutme .tooltip {
+	position: relative;
+	text-align: center;
+	background: whitesmoke;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 2px 10px;
+	width: 10vh;
+	height: 30px;
+	border-radius: 5px;
+	box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+	pointer-events: none;
+	transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.glowny .aboutme .tooltip:before {
+	position: absolute;
+	content: '';
+	height: 8px;
+	width: 8px;
+	background: whitesmoke;
+	bottom: -4px;
+	left: 50%;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.glowny .uslugi-of {
+	padding: 5px;
+	cursor: pointer;
+}
+
+.glowny .uslugi-of .tooltip {
+	position: relative;
+	text-align: center;
+	background: whitesmoke;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 2px 10px;
+	width: 10vh;
+	height: 30px;
+	border-radius: 5px;
+	box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+	pointer-events: none;
+	transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.glowny .uslugi-of .tooltip:before {
+	position: absolute;
+	content: '';
+	height: 8px;
+	width: 8px;
+	background: whitesmoke;
+	bottom: -4px;
+	left: 50%;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.glowny .skills {
+	padding: 5px;
+	cursor: pointer;
+}
+
+.glowny .skills .tooltip {
+	position: relative;
+	text-align: center;
+	background: whitesmoke;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 2px 10px;
+	width: 18vh;
+	height: 30px;
+	border-radius: 5px;
+	box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+	pointer-events: none;
+	transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.glowny .skills .tooltip:before {
+	position: absolute;
+	content: '';
+	height: 8px;
+	width: 8px;
+	background: whitesmoke;
+	bottom: -4px;
+	left: 50%;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.glowny .port {
+	padding: 5px;
+	cursor: pointer;
+}
+
+.glowny .port .tooltip {
+	position: relative;
+	text-align: center;
+	background: whitesmoke;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 2px 10px;
+	width: 16vh;
+	height: 30px;
+	border-radius: 5px;
+	box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+	pointer-events: none;
+	transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.glowny .port .tooltip:before {
+	position: absolute;
+	content: '';
+	height: 8px;
+	width: 8px;
+	background: whitesmoke;
+	bottom: -4px;
+	left: 50%;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.glowny .contact {
+	padding: 5px;
+	cursor: pointer;
+}
+
+.glowny .contact .tooltip {
+	position: relative;
+	text-align: center;
+	background: whitesmoke;
+	font-size: 20px;
+	font-weight: bold;
+	padding: 2px 10px;
+	width: 12vh;
+	height: 30px;
+	border-radius: 5px;
+	box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+	pointer-events: none;
+	transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.glowny .contact .tooltip:before {
+	position: absolute;
+	content: '';
+	height: 8px;
+	width: 8px;
+	background: whitesmoke;
+	bottom: -4px;
+	left: 50%;
+	transform: translateX(-50%) rotate(45deg);
+}
+
+.glowny .ikony-glowny a {
+	color: red;
+}
+
+#menu-icon {
+	font-size: 40px;
+	color: whitesmoke;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	cursor: pointer;
+	display: none;
+}
+
+.glowna {
+	background-image: url(background.jpg);
+	padding: 10px;
+	height: 100%;
+	min-height: 920px;
+}
+
+.front {
+	padding: 10px 20px;
+	position: relative;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	margin-top: 110px;
+	font-size: 55px;
+	font-family: 'Share Tech Mono', monospace;
+}
+
+.front h2 {
+	margin-top: 90px;
+	position: relative;
+	color: transparent;
+	-webkit-text-stroke: 2px rgba(0, 0, 0, 0.777);
+	text-transform: uppercase;
+	background: rgba(255, 255, 255, 0.486);
+	border-radius: 25px;
+	box-shadow: 7px 3px 3px 1px rgba(255, 0, 0, 0.158);
+}
+
+.front h2::before {
+	content: attr(data-text);
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 0;
+	height: 100%;
+	color: red;
+	border-right: 2px solid whitesmoke;
+	animation: animate 5s steps(24) infinite, blinkCursor 2s infinite;
+	overflow: hidden;
+}
+
+@keyframes blinkCursor {
+	0%,
+	100% {
+		opacity: 0;
+	}
+	70%,
+	90% {
+		opacity: 1;
+	}
+}
+
+@keyframes animate {
+	0%,
+	10%,
+	100% {
+		width: 0;
+	}
+	70%,
+	90% {
+		width: 100%;
+	}
+}
+
+.napis {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10px;
+}
+
+.napis p {
+	font-size: 1.2rem;
+	font-weight: bold;
+	letter-spacing: 0.3rem;
+	color: red;
+	background: rgba(255, 255, 255, 0.548);
+	border-radius: 5px;
+	box-shadow: 3px 3px 1px 1px rgb(3, 3, 3);
+}
+
+.przyciski {
+	position: relative;
+	margin: 2.5rem 0px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 12px;
+	transition: all 250ms ease-in-out;
+	cursor: pointer;
+}
+
+.przyciski a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+.przyciski .info {
+	background: whitesmoke;
+	color: red;
+	padding: 10px 20px;
+	border: 2px solid whitesmoke;
+	border-radius: 5px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.przyciski .zat {
+	background: rgb(0, 0, 0);
+	color: red;
+	margin: 0px 0px 0px 20px;
+	padding: 10px 20px;
+	border: 2px solid whitesmoke;
+	border-radius: 5px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.ja {
+	margin: 0 auto;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 20px;
+	background: rgba(0, 0, 0, 0.863);
+	border-radius: 35px;
+	box-shadow: 1px 1px 1px 1px whitesmoke;
+	width: 30%;
+	font-weight: bold;
+}
+
+.imie {
+	color: whitesmoke;
+	font-size: 18px;
+}
+
+.patryk {
+	color: red;
+	font-size: 35px;
+}
+
+.it {
+	color: whitesmoke;
+	font-size: 25px;
+}
+
+/* Scroll */
+
+.scroll {
+	margin: 0 auto;
+	margin-left: 50%;
+	margin-top: -5%;
+	position: absolute;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 55px;
+	color: whitesmoke;
+}
+
+/* sekcja */
+
+section {
+	padding: 15px 0;
+}
+
+section .opis {
+	padding: 15px;
+	position: relative;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	margin-top: 20px;
+	margin-bottom: 60px;
+	padding-bottom: 30px;
+}
+
+section .opis::before {
+	content: '';
+	position: absolute;
+	width: 200px;
+	height: 3px;
+	left: 50%;
+	bottom: 12px;
+	background: red;
+	transform: translateX(-50%);
+}
+
+section .opis::after {
+	position: absolute;
+	padding: 0.8px;
+	left: 50%;
+	bottom: 1px;
+	background: black;
+	border-radius: 35px;
+	transform: translateX(-50%);
+	font-size: 22px;
+	color: whitesmoke;
+}
+
+.omnie .zawartosc-me,
+.uslugi .tego,
+.umie .tak,
+.kontakt .kontakt-me {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	padding: 10%;
+}
+
+/* Sekcja o-mnie */
+
+.omnie {
+	background: url(tlo-tekst2.jpg);
+	color: whitesmoke;
+	background-size: cover;
+	height: 90%;
+	padding: 90px;
+}
+
+.omnie .opis {
+	position: relative;
+	font-size: 40px;
+	font-weight: bold;
+	text-align: center;
+	margin-bottom: 60px;
+	padding-bottom: 30px;
+}
+
+.omnie .opis::before {
+	position: absolute;
+	width: 180px;
+	height: 3px;
+	left: 50%;
+	bottom: 12px;
+	background: red;
+	transform: translateX(-50%);
+}
+
+.omnie .opis::after {
+	content: 'Kim jestem';
+	position: absolute;
+	padding: 1px;
+	left: 50%;
+	bottom: 1px;
+	background: black;
+	border-radius: 35px;
+	transform: translateX(-50%);
+	font-size: 22px;
+	color: whitesmoke;
+}
+
+.omnie .lewa {
+	display: flex;
+	justify-content: center;
+	margin: 0 auto 60px;
+}
+
+.omnie .lewa img {
+	height: 400px;
+	width: 400px;
+	object-fit: cover;
+	margin-left: -50%;
+	border-radius: 35px;
+	box-shadow: 1px 1px 4px 4px black;
+}
+
+.omnie .zawartosc-me .prawa {
+	width: 45%;
+}
+
+.omnie .zawartosc-me .prawa .opis-ja {
+	font-size: 25px;
+	font-weight: bold;
+	line-height: 35px;
+	margin-left: -10%;
+	margin-bottom: 10px;
+	color: red;
+	width: 80%;
+}
+
+.omnie .zawartosc-me .prawa p {
+	display: flex;
+	flex-direction: column;
+	margin-left: -10%;
+	text-align: justify;
+}
+
+.omnie .zawartosc-me .prawa a {
+	margin: 0 auto;
+	display: inline-block;
+	background: red;
+	color: whitesmoke;
+	font-size: 22px;
+	font-weight: bold;
+	padding: 1px 30px;
+	margin-top: 20px;
+	margin-left: -10%;
+	border-radius: 15px;
+	border: 2px dotted red;
+	transition: all 0.3s ease;
+}
+
+.omnie .zawartosc-me .prawa a:hover {
+	color: red;
+	background: transparent;
+}
+
+.omnie .zawartosc-me .strona {
+	width: 50%;
+}
+
+/* Sekcja Usługi */
+
+.uslugi {
+	color: whitesmoke;
+	background: url(tlo2-high.jpg);
+	background-origin: content-box;
+	width: 100%;
+	padding: 90px;
+	min-height: 1010px;
+}
+
+.uslugi .opis::before {
+	background: rgb(255, 0, 0);
+}
+
+.uslugi .opis::after {
+	content: 'Czym się zajmuje';
+}
+
+.uslugi .tego .ikony {
+	margin: 0 auto;
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 40px;
+	margin-top: -70px;
+	background: black;
+	text-align: center;
+	border-radius: 10px;
+	padding: 20px 13px;
+	cursor: pointer;
+	width: 30%;
+	box-shadow: 1px 1px 1px 1px whitesmoke;
+	transition: all 0.3s ease;
+}
+
+.uslugi .tego .ikony .okno {
+	transition: all 0.3s ease;
+}
+
+.uslugi .tego .ikony .okno2 {
+	transition: all 0.3s ease;
+}
+
+.uslugi .tego .ikony .okno3 {
+	transition: all 0.3s ease;
+}
+
+.uslugi .tego .ikony:hover .okno {
+	transform: scale(1.05);
+	padding: 5%;
+	background: whitesmoke;
+	border: 1px solid red;
+	border-radius: 15px;
+	box-shadow: 1px 1px 1px 1px black;
+	width: 100%;
+	color: black;
+	font-weight: bold;
+}
+
+.uslugi .tego .ikony:hover .okno2 {
+	transform: scale(1.05);
+	padding: 5%;
+	background: linear-gradient(90deg, whitesmoke, red);
+	width: 100%;
+	border-radius: 15px;
+	color: black;
+	font-weight: bold;
+}
+
+.uslugi .tego .ikony:hover .okno3 {
+	transform: scale(1.05);
+	padding: 5%;
+	background: red;
+	border-radius: 15px;
+	border: 1px solid whitesmoke;
+	box-shadow: 1px 1px 1px 1px black;
+	width: 100%;
+	color: whitesmoke;
+	font-weight: bold;
+}
+
+.ikony i {
+	font-size: 50px;
+	border-radius: 15px;
+	background: red;
+	color: whitesmoke;
+	transition: color 0.3s ease;
+}
+
+.uslugi .tego .ikony:hover i {
+	color: black;
+}
+
+.uslugi .tego .ikony .usluga-opis {
+	font-size: 25px;
+	font-weight: bold;
+	margin: 7px 0 10px 0;
+}
+
+/* Sekcja Umiejętności */
+
+.skill {
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-items: center;
+}
+
+.umie {
+	background: url(umie.jpg);
+	height: 100%;
+	padding: 90px;
+}
+
+.umie .opis::after {
+	content: 'Co już wiem';
+}
+
+.umie .opis {
+	color: whitesmoke;
+}
+
+.umie .tak .lewa {
+	padding: 25px;
+	margin: 0 auto;
+	margin-left: -3%;
+	color: red;
+	border: 3px solid black;
+	background: rgba(245, 245, 245, 0.788);
+	border-radius: 15px;
+}
+
+.umie .tak .lewa .opis-ja {
+	text-align: left;
+	font-size: 20px;
+	font-weight: bold;
+	margin-bottom: 10px;
+}
+
+.umie .tak .strona {
+	width: calc(50% - 30px);
+}
+
+.gwiazdy {
+	min-height: 20vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: 0 auto;
+	margin-left: 30%;
+	padding: 30px;
+	border-radius: 35px;
+	box-shadow: -1px -1px 6px 6px rgba(0, 0, 0, 0.637), inset -1px -1px 3px 3px rgba(0, 0, 0, 0.616),
+		4px 30px 30px rgba(255, 0, 0, 0.445), inset -5px -2px 5px rgba(255, 0, 0, 0.26);
+	width: 50%;
+	background: red;
+}
+
+.poziom {
+	padding: 15px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 5%;
+	font-size: 20px;
+	font-weight: bold;
+	color: whitesmoke;
+	border-radius: 15px;
+	border: 3px dotted whitesmoke;
+	background: black;
+	width: 100%;
+}
+
+.name {
+	border-radius: 5px;
+	background: rgba(0, 0, 0, 0.726);
+}
+
+.gwiazdy .name .otym {
+	display: flex;
+	flex-direction: row-reverse;
+	justify-content: center;
+	align-items: center;
+	margin: 10px 0;
+	padding: 20px;
+	padding-right: 50px;
+	box-shadow: -1px -1px 3px 3px rgba(0, 0, 0, 0.637), inset -1px -1px 3px 3px rgba(0, 0, 0, 0.616),
+		8px 30px 30px rgba(255, 0, 0, 0.445), inset -5px -2px 5px rgba(255, 0, 0, 0.26);
+}
+
+h3 {
+	min-width: 180px;
+	text-align: center;
+}
+
+.gwiazdy .otym {
+	letter-spacing: 0.6rem;
+}
+
+.otym input {
+	text-align: left;
+	position: relative;
+	width: 30px;
+	height: 40px;
+	cursor: pointer;
+	-webkit-appearance: none;
+	appearance: none;
+	overflow: hidden;
+}
+
+.otym input::before {
+	content: '\ec27';
+	position: absolute;
+	font-size: 30px;
+	font-family: boxicons;
+	left: 4px;
+	transition: all 0.5s ease-in-out;
+}
+
+.otym input:nth-child(2n + 1)::before {
+	right: 4px;
+}
+
+.otym input:hover ~ input::before,
+.otym input:hover::before,
+.otym input:checked ~ input::before,
+.gwiazdy .otym input:checked:before {
+	color: whitesmoke;
+}
+
+/* Sekcja portfolio */
+
+.portfo {
+	background: url(tlo-port.jpg);
+	height: 100%;
+	padding: 90px;
+}
+
+.portfo .opis {
+	color: whitesmoke;
+}
+
+.portfo .opis::after {
+	content: 'Projekty';
+}
+
+.portfo .prace-lista {
+	display: grid;
+	grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+	grid-gap: 40px;
+	margin-top: 50px;
+}
+
+.portfo .praca-img {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 8%;
+	padding-bottom: 10%;
+	position: relative;
+	border-radius: 10px;
+	overflow: hidden;
+}
+
+.praca-img img {
+	margin: 0 auto;
+	width: 100%;
+	border-radius: 10px;
+	display: block;
+	padding-bottom: -90%;
+	transition: transform 0.5s;
+}
+
+.praca-img .warstwa {
+	width: 100%;
+	height: 0;
+	background: linear-gradient(rgba(0, 0, 0, 0.6), red);
+	border-radius: 10px;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+	color: whitesmoke;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding: 0 40px;
+	font-size: 16px;
+	text-align: center;
+}
+
+.praca-img .warstwa h3 {
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+.praca-img .warstwa a {
+	margin-top: 20px;
+	color: red;
+	text-decoration: none;
+	font-size: 35px;
+	line-height: 60px;
+	background: whitesmoke;
+	width: 60px;
+	height: 60px;
+	border-radius: 50%;
+	text-align: center;
+	transition: height 0.5s;
+}
+
+.praca-img:hover img {
+	transform: scale(1.1);
+}
+
+.praca-img:hover .warstwa {
+	height: 100%;
+}
+
+.btn {
+	display: block;
+	margin: 50px auto;
+	width: fit-content;
+	border: 4px solid black;
+	padding: 14px 50px;
+	border-radius: 6px;
+	text-decoration: none;
+	color: whitesmoke;
+	font-size: 20px;
+	font-weight: bold;
+	transition: background 0.3s;
+}
+
+.btn:hover {
+	color: red;
+	background: black;
+	border: 4px solid whitesmoke;
+}
+
+/* Sekcja kontakt */
+
+.kontakt {
+	background: url(tlo-kontakt-high.jpg);
+	color: whitesmoke;
+	background-size: cover;
+	padding: 90px;
+}
+
+.kontakt .opis {
+	color: whitesmoke;
+}
+
+.kontakt .opis::after {
+	content: 'Bądźmy w kontakcie';
+}
+
+.kontakt .opis::before {
+	width: 250px;
+}
+
+.kontakt .opis-ja {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	padding: 10%;
+}
+
+.kontakt .kontakt-me .strona {
+	width: calc(50% - 30px);
+}
+
+.kontakt .kontakt-me .opis-ja {
+	color: black;
+	margin-bottom: 10px;
+	font-size: 35px;
+	font-weight: bold;
+	text-transform: uppercase;
+}
+
+.kontakt .kontakt-me .lewa p {
+	display: flex;
+	justify-content: center;
+	text-align: justify;
+	padding: 20px;
+	width: 80%;
+}
+
+.kontakt .kontakt-me .lewa .widgety {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: left;
+	margin: 0 auto;
+	margin-left: -20%;
+	background: rgba(0, 0, 0, 0.705);
+	border-radius: 35px;
+	border: 3px solid whitesmoke;
+	padding: 5%;
+	padding-bottom: -40%;
+	width: 100%;
+}
+
+.kontakt .kontakt-me .lewa .opis-info {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 50%;
+	font-size: 25px;
+	font-weight: bold;
+	text-transform: uppercase;
+	margin-bottom: 5%;
+	margin-left: 5%;
+}
+
+.kontakt .kontakt-me .mhm {
+	display: flex;
+	height: 65px;
+	align-items: center;
+	margin: 10px 0;
+	padding-bottom: 10%;
+}
+
+.kontakt .kontakt-me .mhm .info-kontakt {
+	margin-left: 30px;
+}
+
+.kontakt .kontakt-me .mhm i {
+	font-size: 25px;
+	color: red;
+}
+
+.kontakt .kontakt-me .info-kontakt .tytul {
+	font-weight: bold;
+	color: red;
+}
+
+.kontakt .prawa form .message {
+	height: 80px;
+}
+
+.kontakt .prawa form .nazwa {
+	margin-right: 10px;
+}
+
+.kontakt .prawa form .email {
+	margin-left: 10px;
+}
+
+.kontakt .prawa .obszary {
+	display: flex;
+}
+
+.kontakt .prawa .obszary,
+.kontakt .prawa .obszar {
+	height: 45px;
+	width: 100%;
+	margin-bottom: 15px;
+}
+
+.kontakt .prawa .obszar input,
+.kontakt .prawa form .message textarea {
+	height: 100%;
+	width: 100%;
+	border-radius: 35px;
+	border: 3px solid black;
+	outline: none;
+	padding: 0 15px;
+	font-size: 20px;
+}
+
+.kontakt .prawa form .message textarea {
+	padding-top: 10px;
+	resize: none;
+}
+
+.kontakt .prawa form .button {
+	height: 50px;
+	width: 100%;
+}
+
+.kontakt .prawa form .button button {
+	margin: 0 auto;
+	margin-left: 40%;
+	width: 20%;
+	height: 100%;
+	border-radius: 15px;
+	border: 2px solid black;
+	background: whitesmoke;
+	color: black;
+	font-size: 15px;
+	font-weight: bold;
+	cursor: pointer;
+	transition: all 0.5s ease;
+}
+
+.kontakt .prawa form .button button:hover {
+	color: black;
+	background: red;
+	border: 3px solid whitesmoke;
+}
+
+/* Sekcja stópki */
+
+footer {
+	background: whitesmoke;
+	padding: 20px 23px;
+	color: black;
+	text-align: center;
+	font-size: 15px;
+	font-weight: bold;
+	text-decoration: none;
+}
+
+footer span a {
+	color: red;
+	font-weight: bold;
+}
+
+footer span a:hover {
+	text-decoration: underline;
+}
+
+@media only screen and (max-width: 1500px) {
+	.glowny .main .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 6px;
+		width: 10vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.glowny .aboutme .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 6px;
+		width: 10vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.glowny .uslugi-of .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 6px;
+		width: 10vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.glowny .skills .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 5px;
+		width: 15vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.glowny .port .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 6px;
+		width: 12vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.glowny .contact .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 6px;
+		width: 10vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.ja {
+		width: 80%;
+	}
+
+	.glowna {
+		width: 100%;
+		min-height: 930px;
+	}
+
+	.glowna .przyciski {
+		padding: 35px;
+	}
+
+	.glowna .przyciski .info {
+		width: 15%;
+	}
+
+	.scroll {
+		margin-left: 48%;
+		margin-top: -10%;
+	}
+
+	.omnie {
+		width: 100%;
+	}
+
+	.omnie .zawartosc-me .lewa img {
+		width: 300px;
+		height: 300px;
+	}
+
+	.omnie .zawartosc-me .opis-ja {
+		margin: 0 auto;
+		padding: 5px;
+		text-align: center;
+	}
+
+	.uslugi {
+		width: 100%;
+	}
+
+	.uslugi .tego .ikony {
+		width: 100%;
+		margin: 10px 0;
+		padding: 12px;
+	}
+
+	.uslugi .opis {
+		margin-bottom: -5%;
+		padding: 30px;
+	}
+
+	.uslugi .opis::before {
+		background: black;
+	}
+
+	.uslugi .opis::after {
+		padding: 2px;
+	}
+
+	.umie {
+		width: 100%;
+	}
+
+	.umie .opis {
+		margin: 35px auto;
+	}
+
+	.umie .opis::before {
+		background: black;
+	}
+
+	.umie .opis::after {
+		padding: -2px;
+	}
+
+	.umie .tak .lewa .opis-ja {
+		text-align: center;
+	}
+
+	.umie .tak .lewa {
+		margin: 0 auto;
+		margin-top: -10%;
+		margin-left: -10%;
+		padding: 10px;
+	}
+
+	.umie .tak .prawa .gwiazdy {
+		padding: 5px;
+		width: 100%;
+		height: 50vh;
+		margin: 0 auto;
+		margin-top: -15%;
+	}
+
+	.portfo {
+		width: 100%;
+	}
+
+	.kontakt {
+		width: 100%;
+	}
+
+	.kontakt .kontakt-me .lewa .opis-info {
+		width: 100%;
+		margin-left: -20%;
+	}
+
+	.kontakt .kontakt-me .prawa .opis-ja {
+		width: 100%;
+		margin-top: -10%;
+		margin-left: 20%;
+		font-size: 31px;
+		color: whitesmoke;
+	}
+
+	.kontakt .kontakt-me .prawa form {
+		width: 130%;
+		margin: 0 auto;
+	}
+
+	.kontakt .kontakt-me .prawa form button {
+		width: 30%;
+		margin: 0 auto;
+		margin-left: 35%;
+	}
+}
+
+@media only screen and (max-width: 1000px) {
+	.glowny .main .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 6px;
+		width: 10vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.glowny .aboutme .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 6px;
+		width: 10vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.glowny .uslugi-of .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 6px;
+		width: 10vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.glowny .skills .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 5px;
+		width: 15vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.glowny .port .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 6px;
+		width: 12vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.glowny .contact .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 6px;
+		width: 10vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.ja {
+		width: 80%;
+	}
+
+	.glowna {
+		height: 97vh;
+	}
+
+	.glowna .przyciski {
+		padding: 35px;
+	}
+
+	.glowna .przyciski .info {
+		width: 15%;
+	}
+
+	.scroll {
+		margin-left: 48%;
+		margin-top: -10%;
+	}
+
+	.omnie .zawartosc-me .lewa img {
+		width: 300px;
+		height: 300px;
+	}
+
+	.omnie .zawartosc-me .opis-ja {
+		margin: 0 auto;
+		padding: 5px;
+		text-align: center;
+	}
+
+	.uslugi {
+		height: 100vh;
+	}
+
+	.uslugi .tego .ikony {
+		width: 100%;
+		margin: 10px 0;
+		padding: 12px;
+	}
+
+	.uslugi .opis {
+		margin-bottom: -5%;
+		padding: 30px;
+	}
+
+	.uslugi .opis::before {
+		background: black;
+	}
+
+	.uslugi .opis::after {
+		padding: 2px;
+	}
+
+	.umie {
+		margin: 0 auto;
+		padding: 40px;
+		height: 100vh;
+	}
+
+	.umie .opis {
+		margin: 35px auto;
+	}
+
+	.umie .opis::before {
+		background: black;
+	}
+
+	.umie .opis::after {
+		padding: -2px;
+	}
+
+	.umie .tak .lewa .opis-ja {
+		text-align: center;
+	}
+
+	.umie .tak .lewa {
+		margin: 0 auto;
+		margin-top: -10%;
+		margin-left: -10%;
+		padding: 10px;
+	}
+
+	.umie .tak .prawa .gwiazdy {
+		padding: 5px;
+		width: 100%;
+		height: 50vh;
+		margin: 0 auto;
+		margin-top: -15%;
+	}
+
+	.portfo {
+		padding: 35px;
+	}
+
+	.kontakt {
+		padding: 30px;
+	}
+
+	.kontakt .kontakt-me .lewa .opis-info {
+		width: 100%;
+		margin-left: -20%;
+	}
+
+	.kontakt .kontakt-me .prawa .opis-ja {
+		width: 100%;
+		margin-top: -10%;
+		font-size: 31px;
+		background: #ffffff;
+		background: linear-gradient(to left, #ffffff 0%, #ff1414 44%, #ffffff 57%, #ff0000 89%);
+		-webkit-background-clip: text;
+		-webkit-text-fill-color: transparent;
+	}
+
+	.kontakt .kontakt-me .prawa form {
+		width: 130%;
+		margin: 0 auto;
+	}
+
+	.kontakt .kontakt-me .prawa form button {
+		width: 30%;
+		margin: 0 auto;
+		margin-left: 35%;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	#menu-icon {
+		position: fixed;
+		margin: 0 auto;
+		margin-left: 78%;
+		padding: 15px;
+		display: block;
+		z-index: 3;
+	}
+
+	.logo {
+		margin: 0 auto;
+		margin-left: -77%;
+		width: 180%;
+		z-index: 3;
+	}
+
+	.ikony-glowny {
+		flex-direction: column;
+		position: fixed;
+		padding: 17rem 0;
+		top: 0;
+		align-items: center;
+		width: 100vw;
+		height: 110vh;
+		background: black;
+		right: -100%;
+		transition: 0.8s ease-in-out;
+		overflow: hidden;
+		z-index: 2;
+	}
+
+	.ikony-glowny.open {
+		right: 0;
+		width: 100%;
+		transition: 0.8s ease-in;
+	}
+
+	.glowna {
+		height: 98vh;
+		min-height: 600px;
+	}
+
+	.front {
+		font-size: 35px;
+	}
+
+	.ja {
+		width: 80%;
+	}
+
+	.scroll {
+		margin-left: 48%;
+		margin-top: -10%;
+	}
+
+	.omnie {
+		padding: 0 40px;
+		height: 100vh;
+	}
+
+	.omnie .zawartosc-me .strona {
+		width: 100%;
+	}
+
+	.omnie .zawartosc-me .lewa img {
+		margin: 0 auto;
+		width: 230px;
+		height: 230px;
+	}
+
+	.omnie .zawartosc-me .opis-ja {
+		margin: 0 auto;
+		padding: 5px;
+		text-align: center;
+	}
+
+	.omnie .zawartosc-me .prawa {
+		text-align: center;
+		padding: -10px;
+	}
+
+	.uslugi .tego .ikony {
+		width: 100%;
+		margin: 10px 0;
+		padding: 10px;
+	}
+
+	.uslugi .opis {
+		margin-bottom: -5%;
+		padding: 30px;
+	}
+
+	.uslugi .opis::before {
+		background: black;
+	}
+
+	.uslugi .opis::after {
+		padding: 2px;
+	}
+
+	.umie {
+		padding: 40px;
+		height: 100vh;
+	}
+
+	.umie .opis {
+		margin: 35px auto;
+	}
+
+	.umie .opis::before {
+		background: black;
+	}
+
+	.umie .opis::after {
+		padding: -2px;
+	}
+
+	.umie .tak .strona {
+		width: 100%;
+	}
+
+	.umie .tak .lewa .opis-ja {
+		text-align: center;
+	}
+
+	.umie .tak .lewa {
+		margin: 0 auto;
+		margin-top: -10%;
+		padding: 10px;
+	}
+
+	.umie .tak .prawa .gwiazdy {
+		padding: 5px;
+		height: 50vh;
+		margin: 0 auto;
+		margin-top: 5%;
+	}
+
+	.portfo {
+		margin: 0 auto;
+		padding: -20px;
+	}
+
+	.portfo .prace-lista {
+		width: 100vw;
+	}
+
+	.portfo .btn {
+		margin: 10px auto;
+		padding: 10px;
+	}
+
+	.kontakt {
+		margin: 0 auto;
+		padding: 35px;
+		padding-bottom: -15%;
+	}
+
+	.kontakt .kontakt-me .strona {
+		width: 100%;
+		margin: 0 auto;
+	}
+
+	.kontakt .kontakt-me .lewa {
+		margin: 0 auto;
+		margin-left: 30%;
+		width: 100%;
+	}
+
+	.kontakt .kontakt-me .lewa .opis-info {
+		text-align: center;
+		width: 100%;
+		margin-left: -18%;
+	}
+
+	.kontakt .kontakt-me .prawa .opis-ja {
+		color: whitesmoke;
+		text-align: center;
+		margin-top: 5%;
+		margin-bottom: -5%;
+	}
+
+	.kontakt .kontakt-me .prawa form {
+		margin-left: -5%;
+		width: 110%;
+	}
+
+	.kontakt .kontakt-me .prawa form button {
+		font-size: 14px;
+		width: 30%;
+		margin-left: 35%;
+	}
+}
+
+@media only screen and (max-width: 700px) {
+	.logo {
+		margin: 0 auto;
+		margin-left: -75%;
+		width: 200%;
+		z-index: 3;
+	}
+
+	#menu-icon {
+		margin-left: 80%;
+		display: block;
+		z-index: 3;
+	}
+
+	.glowny .main .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 6px;
+		width: 12vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.glowny .aboutme .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 6px;
+		width: 12vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.glowny .uslugi-of .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 6px;
+		width: 12vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.glowny .skills .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 5px;
+		width: 20vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.glowny .port .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 6px;
+		width: 15vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.glowny .contact .tooltip {
+		position: relative;
+		text-align: center;
+		background: whitesmoke;
+		font-size: 15px;
+		font-weight: bold;
+		padding: 6px 6px;
+		width: 13vh;
+		height: 30px;
+		border-radius: 5px;
+		box-shadow: 10px 10px 30px rgba(216, 51, 51, 0.1);
+		pointer-events: none;
+		transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+	}
+
+	.front {
+		margin: 0 auto;
+		margin-left: -1%;
+		font-size: 20px;
+	}
+
+	.napis p {
+		margin-left: -5%;
+		padding: 2px;
+		font-size: 0.8rem;
+		text-align: center;
+	}
+
+	.przyciski .info {
+		display: none;
+	}
+
+	.przyciski .zat {
+		margin: 0 auto;
+		margin-top: -25%;
+	}
+
+	.ja {
+		width: 90%;
+	}
+
+	.scroll {
+		margin-top: -25%;
+		margin-left: 43%;
+	}
+
+	.omnie {
+		padding: 5px;
+		height: 100%;
+	}
+
+	.omnie .opis {
+		padding: 55px;
+	}
+
+	.omnie .zawartosc-me .lewa img {
+		height: 180px;
+		width: 180px;
+	}
+
+	.omnie .zawartosc-me .prawa .opis-ja {
+		width: 120%;
+		font-size: 22px;
+		color: red;
+		margin-top: -10%;
+	}
+
+	.omnie .zawartosc-me .prawa {
+		width: 100%;
+	}
+
+	.uslugi {
+		width: 100%;
+		background: url(tlo2-high-tel.jpg);
+	}
+
+	.uslugi .opis {
+		width: 100%;
+		font-size: 35px;
+		margin-top: -20%;
+	}
+
+	.uslugi .opis::before {
+		background: whitesmoke;
+	}
+
+	.uslugi .opis::after {
+		width: 70%;
+		font-size: 16px;
+		padding: 5px;
+	}
+
+	.uslugi .tego .ikony {
+		margin: 10px auto;
+		display: grid;
+		background: black;
+		text-align: center;
+		border-radius: 10px;
+		padding: 20px 13px;
+		width: 200%;
+	}
+
+	.umie {
+		width: 100%;
+	}
+
+	.umie .opis {
+		margin-top: -10%;
+		font-size: 30px;
+		width: 100%;
+	}
+
+	.umie .opis::after {
+		font-size: 15px;
+		padding: 5px;
+	}
+
+	.umie .lewa {
+		margin: 0 auto;
+		width: 100%;
+		padding: 10px;
+	}
+
+	.umie .prawa {
+		width: 100%;
+	}
+
+	.gwiazdy .poziom {
+		margin-top: 10%;
+		padding: 8px;
+		width: 100%;
+		font-size: 15px;
+	}
+
+	.gwiazdy .otym {
+		letter-spacing: 0.1rem;
+	}
+
+	.gwiazdy {
+		font-size: 10.5px;
+	}
+
+	.portfo {
+		width: 100%;
+	}
+
+	.portfo .prace-lista {
+		width: 100%;
+	}
+
+	.kontakt {
+		width: 100%;
+	}
+
+	.kontakt .opis::after {
+		font-size: 15px;
+		padding: 5px;
+		width: 50%;
+	}
+
+	.kontakt .kontakt-me .lewa .widgety {
+		font-weight: bold;
+		font-size: 14px;
+		padding: 5px;
+		border: none;
+	}
+
+	.kontak .kontakt-me .mhm i {
+		font-size: 10px;
+	}
+
+	.kontakt .kontakt-me .prawa .opis-ja {
+		width: 120%;
+		font-size: 25px;
+		margin-left: -8%;
+	}
+
+	.kontakt .kontakt-me .prawa form {
+		width: 100%;
+	}
+
+	.kontakt .kontakt-me .prawa form input {
+		width: 115%;
+	}
+
+	.kontakt .kontakt-me .prawa form .obszar.message {
+		width: 115%;
+	}
+
+	.kontakt .kontakt-me .prawa form button {
+		width: 40%;
+		height: 30px;
+		margin-left: 35%;
+	}
+}
